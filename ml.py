@@ -8,7 +8,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
 # Read the data 
-data = pd.read_csv('./ml_data.csv') # File Path
+data = pd.read_csv('/Users/vivienyu/Desktop/ml_data.csv') # File Path
 
 # Replace -1111.1 with 0 in the dataset
 data.replace(-1111.1, 0, inplace=True)
@@ -32,7 +32,7 @@ X_train3, X_test3, y3_train, y3_test = train_test_split(y3, X, test_size=0.2, ra
 ######### HIGH BLOOD PRESSURE ##########
 
 # Create a linear regression model
-model1 = ElasticNet()
+model1 = LinearRegression()
 
 # Train the model
 model1 = model1.fit(X_train1, y1_train)
@@ -50,7 +50,7 @@ print("R-squared:", r21)
 ######### SMOKER ##########
 
 # Create a linear regression model
-model2 = ElasticNet()
+model2 = LinearRegression()
 
 # Train the model
 model2.fit(X_train2, y2_train)
@@ -60,14 +60,14 @@ predictions2 = model2.predict(X_test2)
 
 # Calculate the mean squared error and r-squared value
 mse2 = mean_squared_error(y2_test, predictions2)
-print("Smoker Mean Squared Error:", mse2)
+print("Physician Mean Squared Error:", mse2)
 
 r22 = r2_score(y2_test, predictions2)
 print("R-squared:", r22)
 
 ######### DIABETES ##########
 
-model3 = ElasticNet()
+model3 = LinearRegression()
 
 # Train the model
 model3.fit(X_train3, y3_train)
