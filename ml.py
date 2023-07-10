@@ -47,7 +47,7 @@ print("High Blood Pressure Mean Squared Error:", mse1)
 r21 = r2_score(y1_test, predictions1)
 print("R-squared:", r21)
 
-######### SMOKER ##########
+######### ACCESS TO PRIMARY CARE ##########
 
 # Create a linear regression model
 model2 = LinearRegression()
